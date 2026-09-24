@@ -44,6 +44,10 @@ canvas, the ECG traces, the heartbeat pulses and the scroll reveals.
 - Served by the Vercel project **`deepa-nurse-site`** (team
   `deepa-2ee0`), not by the projects named `portfolio` or
   `deepa-portfolio` — both of those are dead and should be deleted.
+  `deepa-portfolio` (the original anonymous one) still serves her photos
+  at `deepa-portfolio-psi.vercel.app`.
+- Source is `deepa688/portfolio` on GitHub, pushed via the SSH host
+  alias `github-deepa`.
 - As of 2026-09-24 that project is **not** connected to Git, so pushing
   does not deploy. Deploy with `vercel deploy --prod` from this
   directory, or connect the repo in the Vercel dashboard.
@@ -51,7 +55,10 @@ canvas, the ECG traces, the heartbeat pulses and the scroll reveals.
   while the dashboard looks healthy, check
   `GET /v9/projects/<name>?teamId=<team>`: `live: false` with a
   `BLOCKED` deployment means the Vercel project itself is dead and must
-  be replaced rather than repaired.
+  be replaced rather than repaired. The `portfolio` project died this way
+  after being created with `vercel deploy --temporary`: it looked healthy
+  but every URL returned a 79-byte 404. Never use `--temporary` for
+  anything that will get a real domain; import from Git instead.
 
 ## Commands
 
